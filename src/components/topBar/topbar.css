@@ -1,0 +1,166 @@
+.topbar__container {
+  height: 50px;
+  width: 100%;
+  background-color: #4361ee;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.topbar__left {
+  flex: 3;
+}
+
+.topbar__center {
+  flex: 5;
+  display: flex;
+  justify-content: center;
+}
+
+.topbar__right {
+  flex: 4;
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  margin-left: 20px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.search__bar {
+  width: 50%;
+  padding: 0.2rem;
+  height: 30px;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.search__bar input {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.searchIcon {
+  font-size: 16px;
+  color: gray;
+}
+
+.topbar__links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.topbar__Icons {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.topbar__Icons__Item {
+  cursor: pointer;
+  position: relative;
+  color: white;
+}
+
+.topbarIconBadge {
+  width: 15px;
+  height: 15px;
+  background-color: red;
+  border-radius: 50%;
+  color: white;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.topbarImg {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* Responsive styling for tablets */
+@media (max-width: 768px) {
+  .topbar__container {
+    padding: 0 15px;
+  }
+
+  .topbar__center {
+    flex: 6;
+  }
+
+  .search__bar {
+    width: 70%;
+  }
+
+  .logo {
+    font-size: 20px;
+    margin-left: 10px;
+  }
+
+  .topbar__Icons {
+    gap: 1rem;
+  }
+
+  .topbar__Icons__Item,
+  .topbar__links .topbar__link {
+    font-size: 14px;
+  }
+}
+
+/* Responsive styling for mobile devices */
+@media (max-width: 480px) {
+  .topbar__left {
+    flex: 1;
+  }
+
+  .topbar__center {
+    display: none; /* Hide search bar */
+  }
+
+  .topbar__right {
+    flex: 3;
+    justify-content: flex-end;
+  }
+
+  .topbar__Icons {
+    gap: 1rem;
+  }
+
+  .topbar__Icons__Item,
+  .topbar__links {
+    font-size: 14px;
+  }
+
+  .logo {
+    font-size: 18px;
+    margin-left: 10px;
+  }
+
+  .topbarImg {
+    width: 28px;
+    height: 28px;
+  }
+}
+

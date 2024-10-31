@@ -1,0 +1,140 @@
+.rightBar {
+  flex: 3.5;
+}
+
+.rightBarWrapper {
+  padding: 20px 20px 0 0;
+}
+
+.birthdayContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.birthdayImage {
+  width: 40px;
+  height: 40px;
+}
+
+.birthdayText {
+  font-weight: 300;
+  font-size: 15px;
+}
+
+.rightbarAd {
+  width: 100%;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.rightbarTitle {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.rightbarFriendList {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.rightbarInfo {
+  margin-bottom: 20px;
+}
+
+.rightbarInfoItem {
+  margin-bottom: 10px;
+}
+
+.rightbarInfoKey {
+  font-weight: 500;
+  margin-right: 15px;
+  color: #555;
+}
+
+.rightbarInfoValue {
+  font-weight: 300;
+}
+
+.rightbarFollowings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.rightbarfollowing {
+  display: flex;
+  flex-direction: column;
+  margin: 8px;
+}
+
+.rightbarfollowingImg {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.rightBarFollowBtn {
+  margin-top: 20px;
+  border: none;
+  background-color: var(--main-color);
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.rightBarFollowBtn:focus {
+  outline: none;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  /* Tablet view adjustments */
+  .rightbarfollowingImg {
+    width: 80px;
+    height: 80px;
+  }
+
+  .rightBarFollowBtn {
+    font-size: 14px;
+    padding: 5px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Hide rightbar on small screens */
+  .rightBar {
+    display: none;
+  }
+}
+/* rightBar.css */
+.rightBar {
+  flex: 3; /* Adjusts flex property to control size */
+  height: calc(100vh - 50px);
+  overflow-y: scroll;
+  position: sticky;
+  top: 50px;
+  padding: 20px; /* Add some padding */
+  background-color: #fff; /* Background color */
+}
+
+.rightBarWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .rightBar {
+    flex: 1; /* Adjust flex for smaller screens */
+    height: auto; /* Allow height to be flexible */
+  }
+}
+
