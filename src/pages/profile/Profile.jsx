@@ -8,51 +8,63 @@ import axios from "../../components/axios";
 import { useParams } from "react-router";
 
 function Profile() {
-  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
-  const [user, setUser] = useState({});
-  const username = useParams().username;
+     const PF = import.meta.env.VITE_REACT_APP_PUBLIC_FOLDER;
+     const [user, setUser] = useState({});
+     const username = useParams().username;
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      const res = await axios.get(`/users?username=${username}`);
-      setUser(res.data);
-    };
-    fetchUser();
-  }, [username]);
+     useEffect(() => {
+          const fetchUser = async () => {
+               const res = await axios.get(`/users?username=${username}`);
+               setUser(res.data);
+          };
+          fetchUser();
+     }, [username]);
 
-  return (
-    <>
-      <Topbar />
+     return (
+          <>
+               <Topbar />
 
-      <div className="profile">
-        <SideBar />
-        <div className="profileRight">
-          <div className="profileRightTop">
-            <div className="profileCover">
-              <img
-                className="profileCoverImg"
-                src={user.coverPicture ? PF +user.coverPicture: PF + "noCover.png"}
-                alt=""
-              />
-              <img
-                className="profileUserImg"
-                src={user.profilePicture ?  PF + user.profilePicture : PF + "noAvatarpng.png"}
-                alt=""
-              />
-            </div>
-            <div className="profileInfo">
-              <h4 className="profileInfoName">{user.username}</h4>
-              <h4 className="profileInfoDesc">{user.desc}</h4>
-            </div>
-          </div>
-          <div className="profileRightBottom">
-            <Feed username={username} />
-            <RightBar user={user} />
-          </div>
-        </div>
-      </div>
-    </>
-  );
+               <div className="profile">
+                    <SideBar />
+                    <div className="profileRight">
+                         <div className="profileRightTop">
+                              <div className="profileCover">
+                                   <img
+                                        className="profileCoverImg"
+                                        src={
+                                             user.coverPicture
+                                                  ? PF + user.coverPicture
+                                                  : PF + "noCover.png"
+                                        }
+                                        alt=""
+                                   />
+                                   <img
+                                        className="profileUserImg"
+                                        src={
+                                             user.profilePicture
+                                                  ? PF + user.profilePicture
+                                                  : PF + "noAvatarpng.png"
+                                        }
+                                        alt=""
+                                   />
+                              </div>
+                              <div className="profileInfo">
+                                   <h4 className="profileInfoName">
+                                        {user.username}
+                                   </h4>
+                                   <h4 className="profileInfoDesc">
+                                        {user.desc}
+                                   </h4>
+                              </div>
+                         </div>
+                         <div className="profileRightBottom">
+                              <Feed username={username} />
+                              <RightBar user={user} />
+                         </div>
+                    </div>
+               </div>
+          </>
+     );
 }
 
 export default Profile;
